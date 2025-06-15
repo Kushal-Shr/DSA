@@ -9,4 +9,13 @@ int main()
 
     // Alternatively, you can also use:
     // int marks[] = {99, 95, 96, 91, 93}; Array creation without specifying size
+
+    // Accessing elements of the array
+    cout << marks[0] << endl; // Output: 99
+    cout << marks[1] << endl; // Output: 95
+    cout << marks[2] << endl; // Output: 96
+    cout << marks[3] << endl; // Output: 91
+    cout << marks[4] << endl; // Output: 93
+
+    return 0;
 }
