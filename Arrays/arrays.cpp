@@ -17,5 +17,11 @@ int main()
     cout << marks[3] << endl; // Output: 91
     cout << marks[4] << endl; // Output: 93
 
+    // Looping through the array
+    for (int i = 0; i < sizeof(marks); i++)
+    {
+        cout << marks[i] << endl; // Output each element of the array
+    }
+
     return 0;
 }
