@@ -26,4 +26,6 @@ int main()
             cout << arr1[i] << " ";
         }
     }
+
+    return 0;
 }
