@@ -67,5 +67,7 @@ int main()
     cout << "First Occurence of 3 is " << firstOcc(even, 5, 3) << endl;
     cout << "Last Occurence of 3 is " << lastOcc(even, 5, 3) << endl;
 
+    cout << "Number of Occurence of 2 is " << lastOcc(even, 5, 2) - firstOcc(even, 5, 2) + 1 << endl;
+
     return 0;
 }
