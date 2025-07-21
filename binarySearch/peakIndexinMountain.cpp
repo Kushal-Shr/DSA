@@ -1,3 +1,5 @@
+// finds the index of the peak of the mountain
+
 #include <iostream>
 #include <vector>
 
