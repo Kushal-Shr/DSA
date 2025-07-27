@@ -9,13 +9,17 @@ void bubbleSort(vector<int> &arr)
 {
     for (int i = arr.size(); i > 0; i--)
     {
+        bool isSwapped = false;
         for (int j = 0; j < i - 1; j++)
         {
             if (arr[j] > arr[j + 1])
             {
                 swap(arr[j], arr[j + 1]);
+                isSwapped = true;
             }
         }
+        if (isSwapped == false)
+            break;
     }
 }
 
