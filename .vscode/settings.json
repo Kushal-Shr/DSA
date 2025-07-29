@@ -60,7 +60,8 @@
     "iostream": "cpp",
     "deque": "cpp",
     "string": "cpp",
-    "vector": "cpp"
+    "vector": "cpp",
+    "cmath": "cpp"
   },
   "C_Cpp.errorSquiggles": "disabled"
 }
