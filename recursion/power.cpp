@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cmath>
 
 using namespace std;
 
@@ -10,7 +9,7 @@ int power(int num, int p)
 
     else if (p > 1)
     {
-        return num * pow(num, p - 1);
+        return num * power(num, p - 1);
     }
 }
 
