@@ -2,23 +2,42 @@
 
 using namespace std;
 
-bool isSorted(int *arr, int size)
+bool binarySearch(int *arr, int size, int target)
 {
-    if (size == 0 || size == 1)
-        return true;
+    int s = 0, e = size - 1;
+    int m = (s + e) / 2;
 
-    if (arr[0] > arr[1])
+    if (s > e)
         return false;
 
+    if (arr[m] == target)
+        return true;
+
+    else if (arr[m] > target)
+        return binarySearch(arr + m, size, target);
+
     else
-        return isSorted(arr + 1, size - 1);
+        return binarySearch(arr, size - m - 1, target);
 }
 
 int main()
 {
+    int size;
+    cout << "Enter the size: ";
+    cin >> size;
 
-    int arr[8] = {1, 2, 3, 4, 5, 6, 7, 5};
-    cout << isSorted(arr, 9);
+    int target;
+    cout << "Enter the number you want to search: ";
+    cin >> target;
+
+    int *arr = new int[size];
+    for (int i = 0; i < size; i++)
+    {
+        cout << "Enter the number: ";
+        cin >> *(arr + i);
+    }
+
+    cout << binarySearch(arr, size, target) << endl;
 
     return 0;
 }
