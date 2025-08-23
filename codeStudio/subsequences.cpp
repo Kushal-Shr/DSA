@@ -14,7 +14,7 @@ void solve(string str, string output, int idx, vector<string> &ans)
     solve(str, output, idx + 1, ans);
 
     // include current char
-    output.push_back(str[idx]); // valid now because output is a string
+    output.push_back(str[idx]);
     solve(str, output, idx + 1, ans);
 }
 
