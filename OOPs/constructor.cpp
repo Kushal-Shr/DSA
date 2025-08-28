@@ -24,6 +24,11 @@ public:
         this->health = temp.health;
         this->level = temp.level;
     }
+
+    ~Hero()
+    {
+        cout << "Destructed!!!" << endl;
+    }
 };
 
 int main()
@@ -35,6 +40,8 @@ int main()
     Hero kushal(*kushu);
 
     cout << kushal.name << ' ' << kushal.level << " " << kushal.health << endl;
+
+    delete kushu;
 
     return 0;
 }
