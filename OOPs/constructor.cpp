@@ -9,18 +9,20 @@ public:
     int health;
     char level;
 
-    // default constructor
-    Hero()
-    {
-        cout << "Constructor Called" << endl;
-    }
-
     // parameterised constructor
     Hero(string name, int health, char level)
     {
         this->name = name;
         this->health = health;
         this->level = level;
+    }
+
+    // copy contructor
+    Hero(Hero &temp)
+    {
+        this->name = temp.name;
+        this->health = temp.health;
+        this->level = temp.level;
     }
 };
 
@@ -29,6 +31,10 @@ int main()
     Hero *kushu = new Hero("Kushal", 98, 'A');
 
     cout << kushu->name << ' ' << kushu->level << " " << kushu->health << endl;
+
+    Hero kushal(*kushu);
+
+    cout << kushal.name << ' ' << kushal.level << " " << kushal.health << endl;
 
     return 0;
 }
