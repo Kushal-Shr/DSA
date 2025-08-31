@@ -34,8 +34,14 @@ void insertAtTail(Node *&tail, int d)
 }
 
 // insert at some position
-void insertAt(Node *&head, int d, int pos)
+void insertAt(Node *&head, Node *&tail, int d, int pos)
 {
+    if (pos == 0)
+    {
+        insertAtHead(head, d);
+        return;
+    }
+
     Node *newNode = new Node(d);
 
     Node *temp = head;
@@ -46,6 +52,12 @@ void insertAt(Node *&head, int d, int pos)
     {
         temp = temp->next;
         i++;
+    }
+
+    if (temp->next == NULL)
+    {
+        insertAtTail(tail, d);
+        return;
     }
 
     newNode->next = temp->next;
@@ -81,10 +93,10 @@ int main()
     insertAtHead(head, 1);
     print(head);
 
-    insertAt(head, 7, 3);
+    insertAt(head, tail, 7, 3);
     print(head);
 
-    insertAt(head, 4, 2);
+    insertAt(head, tail, 4, 2);
     print(head);
 
     return 0;
