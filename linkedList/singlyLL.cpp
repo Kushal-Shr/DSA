@@ -13,6 +13,10 @@ public:
         this->data = data;
         this->next = NULL;
     }
+
+    ~Node()
+    {
+    }
 };
 
 // insert at head
@@ -69,7 +73,10 @@ void deletePosition(Node *&head, Node *&tail, int pos)
 {
     if (pos == 0)
     {
+        Node *temp = head;
         head = head->next;
+        temp->next = NULL;
+        delete temp;
         return;
     }
 
@@ -81,14 +88,22 @@ void deletePosition(Node *&head, Node *&tail, int pos)
         i++;
     }
 
-    if (temp->next->next == NULL)
+    if (temp->next == NULL) // position out of range
+        return;
+
+    Node *curr = temp->next;
+
+    if (curr->next == NULL)
     {
         temp->next = NULL;
         tail = temp;
+        delete curr;
         return;
     }
 
-    temp->next = temp->next->next;
+    temp->next = curr->next;
+    curr->next = NULL;
+    delete curr;
 }
 
 // print
