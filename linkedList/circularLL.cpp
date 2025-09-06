@@ -39,6 +39,21 @@ void insertNode(Node *&tail, int element, int data)
     }
 }
 
+void deleteNode(Node *&tail, int val)
+{
+    Node *curr = tail;
+
+    while (curr->next->data != val)
+    {
+        curr = curr->next;
+    }
+
+    Node *d = curr->next;
+    curr->next = curr->next->next;
+
+    delete d;
+}
+
 void print(Node *tail)
 {
     Node *curr = tail;
@@ -63,6 +78,9 @@ int main()
     insertNode(tail, 8, 9);
     insertNode(tail, 5, 6);
 
+    print(tail);
+
+    deleteNode(tail, 7);
     print(tail);
 
     return 0;
